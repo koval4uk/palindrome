@@ -1,6 +1,5 @@
 package com.github.kovalchuk;
 
-import org.apache.log4j.Logger;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,12 +11,12 @@ import java.util.*;
 import java.util.concurrent.ConcurrentSkipListSet;
 
 public class App {
-    final static Logger logger = Logger.getLogger(App.class);
+    //    final static Logger logger = Logger.getLogger(App.class);
     private static final boolean TEST_MODE = false;
 
     public static void main(String[] args) {
         if (TEST_MODE) {
-            logger.error("Start in TEST_MODE");
+//            logger.error("Start in TEST_MODE");
             args = new String[]{"input.txt", "output.txt"};
         }
 
@@ -27,16 +26,16 @@ public class App {
             File inputFile = inputPath.toFile();
 
             if (inputFile.exists()) {
-                logger.debug("Start processing file \n");
+//                logger.debug("Start processing file \n");
 
                 Set<String> words = new HashSet<>();
                 try {
                     Files.lines(inputFile.toPath()).forEach(line -> {
                         words.addAll(getWords(line));
-                        logger.debug(line);
+//                        logger.debug(line);
                     });
 
-                    logger.debug("Finish processing file, find '" + words.size() + "'words\n");
+//                    logger.debug("Finish processing file, find '" + words.size() + "'words\n");
 
                     // find palindrome
                     SortedSet<String> palindromes = new TreeSet<>(String.CASE_INSENSITIVE_ORDER);
@@ -46,9 +45,9 @@ public class App {
                         }
 
                     }
-                    logger.debug("Find '" + palindromes.size() + "'palindromes\n");
+//                    logger.debug("Find '" + palindromes.size() + "'palindromes\n");
 
-                    logger.debug("Start writting file");
+//                    logger.debug("Start writting file");
 
                     Collections.sort(new ArrayList<>(palindromes), Comparator.reverseOrder());
 
@@ -60,16 +59,16 @@ public class App {
                     e.printStackTrace();
                 }
 
-                logger.error("!!!!!!!!!");
+//                logger.error("!!!!!!!!!");
 
 
             }
 
         } else {
-            logger.error("Invalid input params. Need input: [java -jar Palindrom.jar \"input.txt\" \"result.txt\"]");
+//            logger.error("Invalid input params. Need input: [java -jar Palindrom.jar \"input.txt\" \"result.txt\"]");
         }
 
-        logger.info("End task");
+//        logger.info("End task");
     }
 
     public static boolean isPalindromString(String text) {
