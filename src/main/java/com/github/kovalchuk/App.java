@@ -13,7 +13,7 @@ import java.util.concurrent.ConcurrentSkipListSet;
 
 public class App {
     final static Logger logger = Logger.getLogger(App.class);
-    private static final boolean TEST_MODE = true;
+    private static final boolean TEST_MODE = false;
 
     public static void main(String[] args) {
         if (TEST_MODE) {
