@@ -10,7 +10,6 @@ import java.util.*;
 
 public class App {
     private final static Logger logger = Logger.getLogger(App.class);
-    private static final boolean TEST_MODE = false;
 
     public static void main(String[] args) {
         args = setTestModeParams(args);
@@ -37,9 +36,14 @@ public class App {
     }
 
     private static String[] setTestModeParams(String[] args) {
-        if (TEST_MODE) {
-            logger.error("Start in TEST_MODE");
-            args = new String[]{"input.txt", "output.txt"};
+        // VM options -DtestMode=true
+        String testModeProp = System.getProperty("testMode");
+        if (testModeProp != null) {
+            boolean testMode = Boolean.valueOf(testModeProp);
+            if (testMode) {
+                logger.error("Start in testMode");
+                args = new String[]{"input.txt", "output.txt"};
+            }
         }
         return args;
     }
