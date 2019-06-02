@@ -31,4 +31,4 @@
 .DS_Store
 **/.DS_Store
 *.versionsBackup
-output.text
+*.text
