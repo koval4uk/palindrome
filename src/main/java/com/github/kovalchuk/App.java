@@ -12,7 +12,7 @@ import java.util.*;
 
 public class App {
     private final static Logger logger = Logger.getLogger(App.class);
-    private static final boolean TEST_MODE = true;
+    private static final boolean TEST_MODE = false;
 
     public static void main(String[] args) {
         if (TEST_MODE) {
