@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'palindrome'
+
+version ''
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'org.spockframework:spock-core:1.2-groovy-2.5'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'palindrome.PalindromeFinder'
+        )
+    }
+}

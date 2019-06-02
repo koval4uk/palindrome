@@ -1,0 +1,7 @@
+com/Palindrome.class
+com/service/PalindromeSearcherService.class
+com/service/SimplePalindromeSearcherServiceImpl.class
+com/service/FileWriterServiceImpl.class
+com/service/TextReaderService.class
+com/service/SimpleTextReaderServiceImpl.class
+com/service/FileWriterService.class

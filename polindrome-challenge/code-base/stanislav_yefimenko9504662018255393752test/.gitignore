@@ -1,0 +1,18 @@
+*.class
+
+# Package Files #
+target
+
+# IDE
+.idea/
+*.iml
+.project
+.classpath
+.settings
+*.out.xml
+
+# gradle
+build
+.gradle
+target
+out
